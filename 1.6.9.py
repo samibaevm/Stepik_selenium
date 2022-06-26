@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-link = "http://suninjuly.github.io/registration2.html"
+link = "http://suninjuly.github.io/registration1.html"
 
 try:
     browser = webdriver.Chrome()
@@ -27,7 +27,8 @@ try:
     welcome_text = welcome_text_elt.text
 
     # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-    assert "Congratulations! You have successfully registered!" == welcome_text
+    #assert "Congratulations! You have successfully registered!" == welcome_text
+    self.assertEqual(welcome_text, "Congratulations! You have successfully registered!", "test is passed")
 
 finally:
     # ожидание чтобы визуально оценить результаты прохождения скрипта

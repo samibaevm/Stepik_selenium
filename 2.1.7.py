@@ -13,6 +13,7 @@ try:
     browser.get('http://suninjuly.github.io/get_attribute.html')
     chest = browser.find_element(By.CSS_SELECTOR, '#treasure')
     number = chest.get_attribute('valuex')
+    print(type(number))
     y = calc(number)
     browser.find_element(By.CSS_SELECTOR, '#answer').send_keys(y)
     browser.find_element(By.CSS_SELECTOR, '#robotCheckbox').click()
